@@ -533,7 +533,7 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
   .dropdown-menu button:hover { background: transparent; }
   .nav-actions { display: none; }
   .menu-button { display: block; }
-  .hero-buttons, .offer .button, .dark-strip .button, .gallery-cta .button { display: none; }
+  .offer .button, .dark-strip .button, .gallery-cta .button { display: none; }
   .cta-buttons { display: flex; flex-direction: column; width: 100%; }
   .cta-right { max-width: 100%; }
   .floating-wa { display: none; }
