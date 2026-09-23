@@ -466,17 +466,18 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
 .how-it-works .step:hover > svg { color: var(--amber); transform: translateX(4px); }
 
 .contact-main { background: var(--paper); }
+.contact-options h2 { color: #f4f4f5; }
 .contact-page-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 100px; }
 .contact-options > p { max-width: 380px; margin: 23px 0 25px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .contact-option { display: flex; align-items: center; gap: 14px; width: 100%; margin-top: 10px; padding: 18px; border: 1px solid var(--line); border-radius: 12px; transition: border .2s, transform .2s; background: var(--cream); }
 .contact-option:hover { transform: translateX(4px); border-color: var(--amber); }
-.contact-option > span { display: grid; place-items: center; width: 42px; height: 42px; color: var(--charcoal); background: var(--amber-light); border-radius: 10px; }
+.contact-option > span { display: grid; place-items: center; width: 42px; height: 42px; color: var(--amber); background: var(--amber-light); border-radius: 10px; }
 .contact-option div { display: grid; gap: 4px; }
-.contact-option strong { font: 600 13px 'Inter', sans-serif; }
+.contact-option strong { color: #f4f4f5; font: 600 13px 'Inter', sans-serif; }
 .contact-option small { color: var(--muted); font-size: 10px; }
 .contact-option > svg { margin-left: auto; color: #a1a1aa; }
 .whatsapp-option > span { color: #25d366; background: #dcfce7; }
-.coverage-note { display: flex; gap: 10px; margin-top: 28px; color: var(--charcoal); }
+.coverage-note { display: flex; gap: 10px; margin-top: 28px; color: #f4f4f5; }
 .coverage-note > svg { flex: 0 0 auto; color: var(--amber-dark); }
 .coverage-note span { display: grid; gap: 4px; }
 .coverage-note strong { font-size: 12px; }
