@@ -683,13 +683,13 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
   .contact-grid { gap: 30px; }
   .booking-form, .booking-form.compact { padding: 24px 18px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
-  .final-cta-inner { flex-direction: column; align-items: flex-start; padding: 32px 0; gap: 18px; }
+  .final-cta-inner { flex-direction: column; align-items: center; padding: 32px 0; gap: 18px; }
   .final-cta-copy { max-width: 100%; }
   .final-cta-copy p { max-width: 100%; margin-top: 12px; }
   .final-cta h2 { margin-top: 8px; font-size: 30px; }
-  .cta-right { max-width: 230px; width: 100%; margin-left: 0; }
+  .cta-right { max-width: 100%; width: 100%; margin: 0 auto; }
   .cta-buttons { width: 100%; gap: 8px; }
-  .cta-buttons > .button { max-width: 230px; min-height: 42px; }
+  .cta-buttons > .button { width: 100%; max-width: none; min-height: 42px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
   .footer-brand, .footer-contact { grid-column: span 1; }
   .footer-copy { max-width: 100%; }
