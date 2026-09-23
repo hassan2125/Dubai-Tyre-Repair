@@ -1,35 +1,87 @@
-import { Eye, MapPin, ShieldCheck, Target, Wrench, Clock, ThumbsUp, Heart } from 'lucide-react';
-import { heroImages } from '@/data/site';
+import { useEffect, useState } from 'react';
+import { Eye, MapPin, ShieldCheck, Target, Wrench, Clock, ThumbsUp, Heart, Phone } from 'lucide-react';
+import { heroImages, phone, phoneDisplay, whatsapp } from '@/data/site';
 import BgHero from '@/components/BgHero';
+import { WhatsAppIcon } from '@/components/Icons';
 import BrandCarousel from '@/components/BrandCarousel';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
 
+function AnimatedStat({ target, suffix, label }: { target: number; suffix: string; label: string }) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    let frameId = 0;
+    const startTimer = window.setTimeout(() => {
+      const startTime = performance.now();
+      const duration = 2400;
+
+      const tick = (currentTime: number) => {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        setValue(Math.round(target * easedProgress));
+        if (progress < 1) frameId = requestAnimationFrame(tick);
+      };
+
+      frameId = requestAnimationFrame(tick);
+    }, 250);
+
+    return () => {
+      window.clearTimeout(startTimer);
+      cancelAnimationFrame(frameId);
+    };
+  }, [target]);
+
+  const displayValue = target >= 1000 ? `${Math.round(value / 1000)}K` : value;
+
+  return (
+    <div className="big-stat">
+      <strong>{displayValue}<span>{suffix}</span></strong>
+      <span>{label}</span>
+    </div>
+  );
+}
+
 export default function About() {
   return (
     <>
       <BgHero
         image={heroImages.about}
-        eyebrow="About Tyre Rescue Dubai"
+        eyebrow="About Car Tyre Repair Dubai"
         title="The people behind"
         titleEm="your peace of mind."
         subtitle="We're a mobile-first team of tyre specialists making Dubai's roads a little less stressful, one fast response at a time."
         showButtons
       />
 
+      <section className="section about-numbers">
+        <div className="container">
+          <div className="section-head centered">
+            <span className="eyebrow">By the numbers</span>
+            <h2>What our work<br /><em>looks like.</em></h2>
+          </div>
+          <div className="about-stats-vertical">
+            <AnimatedStat target={5000} suffix="+" label="customers helped" />
+            <AnimatedStat target={24} suffix="/7" label="roadside availability" />
+            <AnimatedStat target={10} suffix="m" label="target response time" />
+            <AnimatedStat target={100} suffix="%" label="mobile service" />
+          </div>
+        </div>
+      </section>
+
       <section className="section about-intro">
         <div className="container split-grid">
           <div className="split-copy">
             <span className="eyebrow">More than a quick fix</span>
             <h2>We bring the workshop<br /><em>to your street.</em></h2>
-            <p>Tyre Rescue Dubai started with a simple belief: needing help on the road shouldn't mean losing half your day. Our trained mobile team arrives with the right tools, the right tyres, and the calm expertise to get the job done properly.</p>
+            <p>Car Tyre Repair Dubai started with a simple belief: needing help on the road shouldn't mean losing half your day. Our trained mobile team arrives with the right tools, the right tyres, and the calm expertise to get the job done properly.</p>
             <p style={{ marginTop: '16px' }}>From a puncture outside your villa to a new set of tyres at your office, we keep things transparent, professional, and focused on getting you safely on your way.</p>
-            <div className="about-signature"><strong>Tyre Rescue Dubai</strong><span>Fast response. Fair advice. Every time.</span></div>
+            <div className="about-signature"><strong>Car Tyre Repair Dubai</strong><span>Fast response. Fair advice. Every time.</span></div>
           </div>
           <div className="split-image">
-            <img src={heroImages.about} alt="Tyre Rescue Dubai team at work" loading="lazy" />
+            <img src={heroImages.about} alt="Car Tyre Repair Dubai team at work" loading="lazy" />
           </div>
         </div>
       </section>
@@ -42,7 +94,7 @@ export default function About() {
           <div className="about-story-copy">
             <span className="eyebrow">Our story</span>
             <h2>Built for Dubai's<br /><em>fast-moving drivers.</em></h2>
-            <p>Dubai doesn't slow down, and neither do we. Tyre Rescue Dubai was founded to solve a problem every driver in this city knows: the frustration of waiting hours for help that should arrive in minutes. We built a mobile-first service that comes to you, whether you're parked at a mall, stuck on Sheikh Zayed Road, or at home on a Friday morning.</p>
+            <p>Dubai doesn't slow down, and neither do we. Car Tyre Repair Dubai was founded to solve a problem every driver in this city knows: the frustration of waiting hours for help that should arrive in minutes. We built a mobile-first service that comes to you, whether you're parked at a mall, stuck on Sheikh Zayed Road, or at home on a Friday morning.</p>
             <div className="about-story-points">
               <div className="about-story-point">
                 <span><Clock size={20} /></span>
@@ -57,21 +109,6 @@ export default function About() {
                 <div><strong>Care in every job</strong><small>From the smallest puncture to a full set of new tyres, we treat your car like our own.</small></div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section about-numbers">
-        <div className="container">
-          <div className="section-head centered">
-            <span className="eyebrow">By the numbers</span>
-            <h2>What our work<br /><em>looks like.</em></h2>
-          </div>
-          <div className="about-stats-vertical">
-            <div className="big-stat"><strong>5K<span>+</span></strong><span>customers helped</span></div>
-            <div className="big-stat"><strong>24<span>/7</span></strong><span>roadside availability</span></div>
-            <div className="big-stat"><strong>10<span>m</span></strong><span>target response time</span></div>
-            <div className="big-stat"><strong>100<span>%</span></strong><span>mobile service</span></div>
           </div>
         </div>
       </section>
@@ -123,6 +160,21 @@ export default function About() {
                 <p>{text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="about-inline-cta-section">
+        <div className="container">
+          <div className="about-inline-cta">
+            <div>
+              <h2>Like what you're reading?</h2>
+              <p>Skip the queue — our mobile crew is 10 minutes away.</p>
+            </div>
+            <div className="about-inline-cta-actions">
+              <a className="button" href={`tel:${phone}`}><Phone size={16} /> {phoneDisplay}</a>
+              <a className="button whatsapp-button" href={whatsapp} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} /> WhatsApp us</a>
+            </div>
           </div>
         </div>
       </section>

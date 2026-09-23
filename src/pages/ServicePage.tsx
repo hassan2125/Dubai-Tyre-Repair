@@ -1,5 +1,6 @@
 import { ArrowRight, Check, MapPin, ShieldCheck, Timer, Headphones, BadgeCheck } from 'lucide-react';
-import { serviceDetails } from '@/data/site';
+import { serviceDetails, whatsapp } from '@/data/site';
+import { WhatsAppIcon } from '@/components/Icons';
 import BgHero from '@/components/BgHero';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
@@ -64,6 +65,17 @@ export default function ServicePage({ slug }: { slug: string }) {
               <div key={item}><span><Check size={16} /></span><strong>{item}</strong></div>
             ))}
           </div>
+          <div className="included-cta">
+            <div className="included-cta-stats">
+              <div><span>Price</span><strong>from <em>AED 100</em></strong></div>
+              <div><span>Time on-site</span><strong>15–30 <em>min</em></strong></div>
+              <div><span>Warranty</span><strong>6 <em>months</em></strong></div>
+              <div><span>Avg arrival</span><strong>~10 <em>min</em></strong></div>
+            </div>
+            <a className="button included-cta-button" href={whatsapp} target="_blank" rel="noreferrer">
+              <WhatsAppIcon size={17} className="service-cta-whatsapp-icon" /> Book {detail.title}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -106,8 +118,8 @@ export default function ServicePage({ slug }: { slug: string }) {
           </div>
           <div className="steps-grid">
             {([['01', 'Message us', 'Tell us what happened and where you are.'], ['02', 'We come to you', 'A trained mobile specialist is dispatched.'], ['03', 'Drive away', 'We fix, fit, or replace and check everything.']] as const).map(([n, t, d]) => (
-              <div className="step" key={n}>
-                <span>{n}</span>
+              <div className="step" key={n} data-number={n}>
+                <span className="step-number">{n}</span>
                 <div><h3>{t}</h3><p>{d}</p></div>
                 <ArrowRight size={19} />
               </div>

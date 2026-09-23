@@ -25,9 +25,9 @@ const serviceFaqs: FaqItem[] = [
 ];
 
 const aboutFaqs: FaqItem[] = [
-  { q: 'How long has Tyre Rescue Dubai been operating?', a: 'We have been serving Dubai drivers for several years, building a reputation for fast response, honest service, and professional results that have earned us 5,000+ satisfied customers.' },
+  { q: 'How long has Car Tyre Repair Dubai been operating?', a: 'We have been serving Dubai drivers for several years, building a reputation for fast response, honest service, and professional results that have earned us 5,000+ satisfied customers.' },
   { q: 'Are your technicians trained and certified?', a: 'Yes. All of our mobile technicians are trained professionals with hands-on experience across a wide range of vehicle makes and models. We invest in ongoing training to keep our standards high.' },
-  { q: 'What makes Tyre Rescue Dubai different from a regular garage?', a: 'We come to you. There is no waiting room, no appointment queue, and no need to arrange a tow. Our mobile workshops are fully equipped to handle most tyre and battery issues at your location.' },
+  { q: 'What makes Car Tyre Repair Dubai different from a regular garage?', a: 'We come to you. There is no waiting room, no appointment queue, and no need to arrange a tow. Our mobile workshops are fully equipped to handle most tyre and battery issues at your location.' },
   { q: 'Do you work with all car brands?', a: 'Yes. We service all major brands including Toyota, BMW, Mercedes-Benz, Nissan, Ford, Audi, Lexus, Hyundai, Kia, Land Rover, and many more — whether Japanese, German, American, Chinese, or British.' },
   { q: 'Can businesses use your service for their fleet?', a: 'Yes. We offer fleet support for companies across Dubai. If you manage a fleet and need a reliable mobile tyre partner, get in touch and we will arrange a suitable agreement.' },
   { q: 'How do I trust that your pricing is fair?', a: 'We confirm the price before starting any work. There are no hidden charges and no surprises. If the job changes in scope, we will tell you before proceeding.' },

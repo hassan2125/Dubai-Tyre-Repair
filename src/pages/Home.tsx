@@ -75,7 +75,7 @@ export default function Home() {
             <span className="stat-card"><strong>10 min</strong><small>average arrival time</small></span>
           </div>
           <div className="split-copy">
-            <span className="eyebrow">Why Tyre Rescue</span>
+            <span className="eyebrow">Why Car Tyre Repair Dubai</span>
             <h2>Dubai-wide tyre repair.<br /><em>We come to you.</em></h2>
             <p>No matter where you are in Dubai, our mobile tyre repair team is always ready to assist. We bring expert service directly to your location, saving you time and hassle.</p>
             <div className="benefit-list">
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section steps">
+      <section className="section how-it-works">
         <div className="container">
           <div className="section-head centered">
             <span className="eyebrow">Simple by design</span>
@@ -110,8 +110,8 @@ export default function Home() {
           </div>
           <div className="steps-grid">
             {([['01', 'Tell us what happened', 'Message us on WhatsApp or call our team.'], ['02', 'Share your location', 'Drop a pin or tell us your area in Dubai.'], ['03', 'We get you moving', 'Our mobile expert arrives and sorts it on the spot.']] as const).map(([number, title, text]) => (
-              <div className="step" key={number}>
-                <span>{number}</span>
+              <div className="step" key={number} data-number={number}>
+                <span className="step-number">{number}</span>
                 <div><h3>{title}</h3><p>{text}</p></div>
                 <ArrowRight size={19} />
               </div>

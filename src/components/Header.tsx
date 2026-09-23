@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Menu, Phone, X } from 'lucide-react';
 import { navigate } from '@/lib/navigate';
-import { phone, phoneDisplay, whatsapp, services } from '@/data/site';
+import { heroImages, phone, phoneDisplay, whatsapp, services } from '@/data/site';
 import { WhatsAppIcon } from '@/components/Icons';
 import Logo from '@/components/Logo';
 
@@ -58,20 +58,29 @@ export default function Header() {
               </button>
               {servicesOpen && (
                 <div className="dropdown-menu" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-                  <button className="dropdown-all" onClick={() => { navigate('/services'); closeAll(); }}>
-                    <span className="dropdown-icon dropdown-icon-all">⊞</span>
-                    <span className="dropdown-label"><strong>All Services</strong><small>Browse all six mobile services</small></span>
-                  </button>
-                  <div className="dropdown-divider" />
-                  {services.map((service) => {
-                    const Icon = service.icon;
-                    return (
-                      <button key={service.slug} onClick={() => { navigate(`/${service.slug}`); closeAll(); }}>
-                        <span className="dropdown-icon"><Icon size={17} /></span>
-                        <span className="dropdown-label"><strong>{service.title}</strong><small>{service.short}</small></span>
-                      </button>
-                    );
-                  })}
+                  <div className="dropdown-services">
+                    {services.map((service) => {
+                      const Icon = service.icon;
+                      return (
+                        <button key={service.slug} onClick={() => { navigate(`/${service.slug}`); closeAll(); }}>
+                          <span className="dropdown-icon"><Icon size={17} /></span>
+                          <span className="dropdown-label"><strong>{service.title}</strong><small>{service.short}</small></span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="dropdown-promo" style={{ backgroundImage: `url(${heroImages.mobileFitting})` }}>
+                    <div className="dropdown-promo-overlay" />
+                    <div className="dropdown-promo-content">
+                      <span className="dropdown-promo-status">Avg 10 min away</span>
+                      <h3>All six services,<br /><em>one mobile team.</em></h3>
+                      <p>Professional tyre and battery help wherever you are in Dubai.</p>
+                      <button className="dropdown-promo-browse" onClick={() => { navigate('/services'); closeAll(); }}>Browse all services <span>→</span></button>
+                      <a className="button whatsapp-button dropdown-promo-whatsapp" href={whatsapp} target="_blank" rel="noreferrer" onClick={closeAll}>
+                        <WhatsAppIcon size={16} /> Not sure? Ask us
+                      </a>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>

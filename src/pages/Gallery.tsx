@@ -19,7 +19,7 @@ export default function Gallery() {
   return (
     <>
       <BgHero
-        image={galleryItems[0].image}
+        image={heroImages.gallery}
         eyebrow="Our work in action"
         title="See what we do,"
         titleEm="on the road."

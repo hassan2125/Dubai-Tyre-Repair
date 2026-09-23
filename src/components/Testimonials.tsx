@@ -9,7 +9,7 @@ export default function Testimonials() {
         <div className="section-head centered">
           <span className="eyebrow">Real people. Real relief.</span>
           <h2>Good service travels fast.</h2>
-          <p>Over 5,000 drivers across Dubai have trusted Tyre Rescue to get them moving again.</p>
+          <p>Over 5,000 drivers across Dubai have trusted Car Tyre Repair Dubai to get them moving again.</p>
         </div>
       </div>
       <div className="testimonial-carousel">

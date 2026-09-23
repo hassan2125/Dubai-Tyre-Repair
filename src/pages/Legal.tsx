@@ -7,7 +7,7 @@ export default function Legal({ terms = false }: { terms?: boolean }) {
     <>
       <BgHero
         image={heroImages.legal}
-        eyebrow="Tyre Rescue Dubai"
+        eyebrow="Car Tyre Repair Dubai"
         title={terms ? 'Terms & Conditions' : 'Privacy Policy'}
         subtitle="Please read this information carefully. It explains how we work and what you can expect from our service."
       />
@@ -18,7 +18,7 @@ export default function Legal({ terms = false }: { terms?: boolean }) {
           {terms ? (
             <>
               <h2>Using our service</h2>
-              <p>By booking Tyre Rescue Dubai, you agree to provide accurate contact and location details so our team can reach you. Service availability and arrival times can vary based on traffic, weather, and demand.</p>
+              <p>By booking Car Tyre Repair Dubai, you agree to provide accurate contact and location details so our team can reach you. Service availability and arrival times can vary based on traffic, weather, and demand.</p>
               <h2>Pricing and payment</h2>
               <p>We confirm the scope and price of work before starting. Additional work will only be carried out with your approval. We accept secure online payments and other payment methods communicated by our team.</p>
               <h2>Safety and responsibility</h2>
@@ -35,7 +35,7 @@ export default function Legal({ terms = false }: { terms?: boolean }) {
               <h2>Keeping information safe</h2>
               <p>We take reasonable steps to protect the information you share with us and only keep it for as long as needed for business, legal, or customer service purposes.</p>
               <h2>Questions</h2>
-              <p>For privacy questions, contact Tyre Rescue Dubai through WhatsApp or call {phoneDisplay}.</p>
+              <p>For privacy questions, contact Car Tyre Repair Dubai through WhatsApp or call {phoneDisplay}.</p>
             </>
           )}
         </div>

@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© 2025 Tyre Rescue Dubai. All rights reserved.</span>
+        <span>© 2025 Car Tyre Repair Dubai. All rights reserved.</span>
         <span>Powered by <a href="https://prismxmedia.com/" target="_blank" rel="noreferrer" className="footer-credit">Prismx Media</a></span>
       </div>
     </footer>

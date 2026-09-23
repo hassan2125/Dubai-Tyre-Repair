@@ -14,7 +14,7 @@ export default function App() {
   useEffect(() => {
     const update = (): void => setPath(window.location.pathname);
     window.addEventListener('popstate', update);
-    document.title = path === '/' ? 'Tyre Rescue Dubai | Mobile Tyre Repair in 10 Minutes' : 'Tyre Rescue Dubai | Fast Mobile Roadside Assistance';
+    document.title = path === '/' ? 'Car Tyre Repair Dubai | Mobile Tyre Repair in 10 Minutes' : 'Car Tyre Repair Dubai | Fast Mobile Roadside Assistance';
     return () => window.removeEventListener('popstate', update);
   }, [path]);
 
