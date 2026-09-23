@@ -67,7 +67,7 @@ export default function Gallery() {
           <div className="gallery-cta" style={{ backgroundImage: `url(${heroImages.newTyre})` }}>
             <span className="eyebrow">Need help like this?</span>
             <h3>We're ready to get you moving.</h3>
-            <a className="button" href={whatsapp} target="_blank" rel="noreferrer">
+            <a className="button whatsapp-button" href={whatsapp} target="_blank" rel="noreferrer">
               <WhatsAppIcon size={17} /> Book a Service
             </a>
           </div>

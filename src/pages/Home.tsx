@@ -50,13 +50,11 @@ export default function Home() {
           </div>
           <div className="service-grid-6">
             {services.map((service) => {
-              const Icon = service.icon;
               return (
                 <button className="service-card-6" key={service.slug} onClick={() => navigate(`/${service.slug}`)}>
                   <div className="service-card-img">
                     <img src={service.image} alt={`${service.title} service in Dubai`} />
                     <div className="service-card-overlay" />
-                    <span className="service-card-icon"><Icon size={20} /></span>
                   </div>
                   <div className="service-card-body">
                     <h3>{service.title}</h3>

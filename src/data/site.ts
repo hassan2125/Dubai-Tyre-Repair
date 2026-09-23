@@ -8,16 +8,16 @@ export const address = 'Dubai, United Arab Emirates';
 export const workingHours = 'Open 24 Hours · 7 Days a Week';
 
 export const heroImages = {
-  home: 'https://images.pexels.com/photos/38581983/pexels-photo-38581983.jpeg?auto=compress&cs=tinysrgb&w=1600',
+  home: '/images/Banner%20Home%20Page.jpeg?v=20260924',
   about: 'https://images.pexels.com/photos/7019602/pexels-photo-7019602.jpeg?auto=compress&cs=tinysrgb&w=1600',
   services: 'https://images.pexels.com/photos/37002235/pexels-photo-37002235.jpeg?auto=compress&cs=tinysrgb&w=1600',
   contact: 'https://images.pexels.com/photos/4857606/pexels-photo-4857606.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  flatTyre: 'https://images.pexels.com/photos/38581983/pexels-photo-38581983.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  mobileFitting: 'https://images.pexels.com/photos/6870331/pexels-photo-6870331.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  newTyre: 'https://images.pexels.com/photos/17600886/pexels-photo-17600886.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  spareTyre: 'https://images.pexels.com/photos/5733659/pexels-photo-5733659.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  emergency: 'https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  battery: 'https://images.pexels.com/photos/8478228/pexels-photo-8478228.jpeg?auto=compress&cs=tinysrgb&w=1600',
+  flatTyre: '/images/Services/Flat%20Tyre%20Repair.jpeg',
+  mobileFitting: '/images/Services/Mobile%20Tyre%20Fitting.jpeg',
+  newTyre: '/images/Services/New%20Tyre%20Replacement.jpeg',
+  spareTyre: '/images/Services/Spare%20Tyre%20Replacement.jpeg',
+  emergency: '/images/Services/Emergency%20Tyre%20Repair.jpeg',
+  battery: '/images/Services/Battery%20Replacement.jpeg',
   legal: 'https://images.pexels.com/photos/4062376/pexels-photo-4062376.jpeg?auto=compress&cs=tinysrgb&w=1600',
   cta: 'https://images.pexels.com/photos/4062376/pexels-photo-4062376.jpeg?auto=compress&cs=tinysrgb&w=1600',
 };
@@ -176,7 +176,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     included: ['24/7 emergency dispatch', 'Roadside safety assessment', 'Tyre repair or spare fitting', 'Clear pricing before we start'],
     detail: "Breakdowns are stressful enough. We keep our response calm, our updates clear, and our work professional from the first message to the moment you're moving again.",
     gallery: [
-      'https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&cs=tinysrgb&w=900',
+      heroImages.emergency,
       'https://images.pexels.com/photos/38581983/pexels-photo-38581983.jpeg?auto=compress&cs=tinysrgb&w=900',
       'https://images.pexels.com/photos/12555009/pexels-photo-12555009.jpeg?auto=compress&cs=tinysrgb&w=900',
     ],
@@ -207,7 +207,7 @@ export const galleryItems: GalleryItem[] = [
   { image: 'https://images.pexels.com/photos/38581983/pexels-photo-38581983.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Roadside Flat Tyre Repair', category: 'Flat Tyre Repair', span: true },
   { image: 'https://images.pexels.com/photos/6870331/pexels-photo-6870331.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Mobile Tyre Fitting', category: 'Mobile Tyre Fitting' },
   { image: 'https://images.pexels.com/photos/17600886/pexels-photo-17600886.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'New Tyre Installation', category: 'New Tyre Replacement' },
-  { image: 'https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Emergency Roadside Assistance', category: 'Emergency Tyre Repair' },
+  { image: heroImages.emergency, title: 'Emergency Roadside Assistance', category: 'Emergency Tyre Repair' },
   { image: 'https://images.pexels.com/photos/8478228/pexels-photo-8478228.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Battery Replacement', category: 'Battery Replacement', span: true },
   { image: 'https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Tyre Pressure Check', category: 'Mobile Tyre Fitting' },
   { image: 'https://images.pexels.com/photos/12555009/pexels-photo-12555009.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Wheel Repair Team', category: 'Flat Tyre Repair' },

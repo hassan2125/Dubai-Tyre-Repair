@@ -44,7 +44,7 @@ export default function Header() {
       </div>
       <header className={scrolled ? 'header scrolled' : 'header'}>
         <div className="container nav-wrap">
-          <Logo />
+          <Logo light />
 
           <nav className={open ? 'nav open' : 'nav'}>
             <button className={path === '/' ? 'active' : ''} onClick={() => { navigate('/'); closeAll(); }}>Home</button>

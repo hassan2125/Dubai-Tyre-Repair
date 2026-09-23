@@ -49,7 +49,7 @@ export default function Services() {
         <div className="container dark-strip-inner">
           <span className="eyebrow">The promise</span>
           <h2>Fast hands. Clear answers.<br /><em>A better way to get help.</em></h2>
-          <a className="button" href={whatsapp} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} /> Book a Service <ArrowRight size={17} /></a>
+          <a className="button whatsapp-button" href={whatsapp} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} /> Book a Service <ArrowRight size={17} /></a>
         </div>
       </section>
 

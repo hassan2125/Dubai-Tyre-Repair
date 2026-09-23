@@ -14,7 +14,7 @@ export default function FinalCta() {
         </div>
         <div className="cta-right">
           <div className="cta-buttons">
-            <a className="button" href={whatsapp} target="_blank" rel="noreferrer"><WhatsAppIcon size={18} /> Book a Service</a>
+            <a className="button whatsapp-button" href={whatsapp} target="_blank" rel="noreferrer"><WhatsAppIcon size={18} /> Book a Service</a>
             <a className="button button-ghost" href={`tel:${phone}`}><Phone size={17} /> {phoneDisplay}</a>
           </div>
         </div>
