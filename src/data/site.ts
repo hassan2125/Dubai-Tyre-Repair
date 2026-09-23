@@ -83,27 +83,28 @@ export interface Testimonial {
   name: string;
   location: string;
   rating: number;
+  avatar: string;
 }
 
 export const testimonialsData: Testimonial[] = [
-  { quote: 'My tyre went flat near Downtown at 11pm. They arrived quickly, fixed it cleanly, and I was home in no time.', name: 'Omar A.', location: 'Downtown Dubai', rating: 5 },
-  { quote: 'The whole experience was incredibly easy. I shared my location on WhatsApp and the team handled everything.', name: 'Sarah M.', location: 'Jumeirah', rating: 5 },
-  { quote: 'Professional, honest and fast. The new tyres were fitted at my office while I carried on with my day.', name: 'Daniel R.', location: 'Business Bay', rating: 5 },
-  { quote: 'Called them at 2am on Sheikh Zayed Road. They were there in 15 minutes and had me moving again fast.', name: 'Khalid S.', location: 'Sheikh Zayed Road', rating: 5 },
-  { quote: 'Booked a battery replacement through WhatsApp. They arrived the same morning with the right battery.', name: 'Priya N.', location: 'Dubai Marina', rating: 5 },
-  { quote: 'Best roadside service I have used in Dubai. Fair price, no surprises, and very professional staff.', name: 'Ahmed F.', location: 'Al Barsha', rating: 5 },
-  { quote: 'My spare tyre was fitted properly and they even checked the other wheels for me. Great attention to detail.', name: 'Lisa K.', location: 'Arabian Ranches', rating: 5 },
-  { quote: 'I was stranded near Jebel Ali and they reached me faster than anyone else I called. Lifesavers.', name: 'Rajesh P.', location: 'Jebel Ali', rating: 5 },
-  { quote: 'The mobile fitting service is brilliant. I did not have to go anywhere or wait in a queue. Highly recommend.', name: 'Fatima H.', location: 'Mirdif', rating: 5 },
-  { quote: 'Very transparent about pricing. They told me the cost before starting and stuck to it. No hidden charges.', name: 'James W.', location: 'JLT', rating: 5 },
-  { quote: 'They came to my office car park and changed all four tyres. I barely had to leave my desk.', name: 'Noura A.', location: 'DIFC', rating: 5 },
-  { quote: 'Emergency call at 6am before a flight. They understood the urgency and prioritised me. Made my flight.', name: 'Vikram S.', location: 'Silicon Oasis', rating: 5 },
-  { quote: 'The technician was knowledgeable and explained what had caused the puncture. Very educational and helpful.', name: 'Elena V.', location: 'Dubai Hills', rating: 5 },
-  { quote: 'I compared three services and Car Tyre Repair Dubai was the most responsive and reasonably priced. Will use again.', name: 'Mohammed R.', location: 'Deira', rating: 5 },
-  { quote: 'They sorted a tricky spare tyre swap that two other companies could not handle. Very capable team.', name: 'Sophie L.', location: 'The Greens', rating: 5 },
-  { quote: 'Friendly, efficient and they cleaned up after the work. Small things like that make a big difference.', name: 'Hassan T.', location: 'Al Quoz', rating: 5 },
-  { quote: 'Got a 5% discount on my new tyres which was a nice surprise. The fitting was quick and professional.', name: 'Aisha M.', location: 'Dubai Creek Harbour', rating: 5 },
-  { quote: 'I was worried about being overcharged as a woman but they were completely fair and honest. Trustworthy team.', name: 'Grace O.', location: 'Motor City', rating: 5 },
+  { quote: 'My tyre went flat near Downtown at 11pm. They arrived quickly, fixed it cleanly, and I was home in no time.', name: 'Omar A.', location: 'Downtown Dubai', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
+  { quote: 'The whole experience was incredibly easy. I shared my location on WhatsApp and the team handled everything.', name: 'Sarah M.', location: 'Jumeirah', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
+  { quote: 'Professional, honest and fast. The new tyres were fitted at my office while I carried on with my day.', name: 'Daniel R.', location: 'Business Bay', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
+  { quote: 'Called them at 2am on Sheikh Zayed Road. They were there in 15 minutes and had me moving again fast.', name: 'Khalid S.', location: 'Sheikh Zayed Road', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/75.jpg' },
+  { quote: 'Booked a battery replacement through WhatsApp. They arrived the same morning with the right battery.', name: 'Priya N.', location: 'Dubai Marina', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/65.jpg' },
+  { quote: 'Best roadside service I have used in Dubai. Fair price, no surprises, and very professional staff.', name: 'Ahmed F.', location: 'Al Barsha', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/52.jpg' },
+  { quote: 'My spare tyre was fitted properly and they even checked the other wheels for me. Great attention to detail.', name: 'Lisa K.', location: 'Arabian Ranches', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
+  { quote: 'I was stranded near Jebel Ali and they reached me faster than anyone else I called. Lifesavers.', name: 'Rajesh P.', location: 'Jebel Ali', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/64.jpg' },
+  { quote: 'The mobile fitting service is brilliant. I did not have to go anywhere or wait in a queue. Highly recommend.', name: 'Fatima H.', location: 'Mirdif', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/33.jpg' },
+  { quote: 'Very transparent about pricing. They told me the cost before starting and stuck to it. No hidden charges.', name: 'James W.', location: 'JLT', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/41.jpg' },
+  { quote: 'They came to my office car park and changed all four tyres. I barely had to leave my desk.', name: 'Noura A.', location: 'DIFC', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/49.jpg' },
+  { quote: 'Emergency call at 6am before a flight. They understood the urgency and prioritised me. Made my flight.', name: 'Vikram S.', location: 'Silicon Oasis', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/70.jpg' },
+  { quote: 'The technician was knowledgeable and explained what had caused the puncture. Very educational and helpful.', name: 'Elena V.', location: 'Dubai Hills', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/50.jpg' },
+  { quote: 'I compared three services and Car Tyre Repair Dubai was the most responsive and reasonably priced. Will use again.', name: 'Mohammed R.', location: 'Deira', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/22.jpg' },
+  { quote: 'They sorted a tricky spare tyre swap that two other companies could not handle. Very capable team.', name: 'Sophie L.', location: 'The Greens', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/26.jpg' },
+  { quote: 'Friendly, efficient and they cleaned up after the work. Small things like that make a big difference.', name: 'Hassan T.', location: 'Al Quoz', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/36.jpg' },
+  { quote: 'Got a 5% discount on my new tyres which was a nice surprise. The fitting was quick and professional.', name: 'Aisha M.', location: 'Dubai Creek Harbour', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/12.jpg' },
+  { quote: 'I was worried about being overcharged as a woman but they were completely fair and honest. Trustworthy team.', name: 'Grace O.', location: 'Motor City', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/79.jpg' },
 ];
 
 export interface ServiceDetail {

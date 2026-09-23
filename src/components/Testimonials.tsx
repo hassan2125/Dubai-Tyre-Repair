@@ -24,7 +24,10 @@ export default function Testimonials() {
               </div>
               <p>{item.quote}</p>
               <div className="testimonial-author">
-                <div className="author-avatar">{item.name.charAt(0)}</div>
+                <div className="author-avatar">
+                  <img src={item.avatar} alt={`${item.name} customer portrait`} loading="lazy" />
+                  <span>{item.name.charAt(0)}</span>
+                </div>
                 <div>
                   <strong>{item.name}</strong>
                   <small>{item.location}</small>

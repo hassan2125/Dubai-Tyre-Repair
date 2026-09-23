@@ -10,16 +10,17 @@ interface BgHeroProps {
   titleEm?: string;
   subtitle: string;
   showButtons?: boolean;
+  statusEyebrow?: boolean;
   children?: ReactNode;
 }
 
-export default function BgHero({ image, eyebrow, title, titleEm, subtitle, showButtons = false, children }: BgHeroProps) {
+export default function BgHero({ image, eyebrow, title, titleEm, subtitle, showButtons = false, statusEyebrow = false, children }: BgHeroProps) {
   return (
     <section className="bg-hero" style={{ backgroundImage: `url(${image})` }}>
       <div className="bg-hero-overlay" />
       <div className="bg-hero-tint" />
       <div className="container bg-hero-content">
-        <span className="eyebrow">{eyebrow}</span>
+        <span className={statusEyebrow ? 'eyebrow hero-status' : 'eyebrow'}>{eyebrow}</span>
         <h1>{title}{titleEm && <><br /><em>{titleEm}</em></>}</h1>
         <p>{subtitle}</p>
         {showButtons && (

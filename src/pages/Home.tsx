@@ -1,6 +1,6 @@
 import { ArrowRight, Check, Clock3, CreditCard, Sparkles, Star, Zap } from 'lucide-react';
 import { navigate } from '@/lib/navigate';
-import { heroImages, services, whatsapp } from '@/data/site';
+import { heroImages, services, testimonialsData, whatsapp } from '@/data/site';
 import BgHero from '@/components/BgHero';
 import BrandCarousel from '@/components/BrandCarousel';
 import Testimonials from '@/components/Testimonials';
@@ -13,14 +13,19 @@ export default function Home() {
     <>
       <BgHero
         image={heroImages.home}
-        eyebrow="Dubai's mobile tyre specialists"
+        eyebrow="Mobile crew online now · avg 10 min away"
+        statusEyebrow
         title="Back on the road."
         titleEm="In 10 minutes."
         subtitle="Fast, professional tyre repair and roadside assistance wherever you are in Dubai. No towing. No waiting room. Just expert help at your location."
         showButtons
       >
         <div className="hero-note">
-          <span className="avatar-stack"><i /><i /><i /></span>
+          <span className="avatar-stack">
+            {testimonialsData.slice(0, 3).map((testimonial) => (
+              <img key={testimonial.name} src={testimonial.avatar} alt={`${testimonial.name} customer`} />
+            ))}
+          </span>
           <span><strong>5000+</strong> drivers helped in Dubai</span>
         </div>
       </BgHero>
