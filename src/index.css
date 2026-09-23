@@ -631,10 +631,9 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
     .logo-light .logo-mark { width: 132px; height: 42px; }
   .nav.open { display: flex; }
   .nav > button, .nav-dropdown > button { justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); }
-  .dropdown-menu { position: static; transform: none; width: 100%; margin-top: 0; box-shadow: none; border: 0; background: transparent; backdrop-filter: none; padding: 0; }
+  .dropdown-menu { position: static; transform: none; width: 100%; max-height: calc(100vh - 150px); overflow-y: auto; margin-top: 0; box-shadow: none; border: 0; border-radius: 0; background: #18181b; backdrop-filter: none; padding: 8px 0 12px; grid-template-columns: 1fr; gap: 8px; animation: none; }
   .dropdown-services { grid-template-columns: 1fr; }
-  .dropdown-promo { min-height: 210px; margin-top: 8px; }
-  .dropdown-promo-content { padding: 20px 16px 15px; }
+  .dropdown-promo { display: none; }
   .dropdown-menu button { padding: 12px 0; border-bottom: 1px solid var(--line); border-radius: 0; }
   .dropdown-menu button:hover { background: transparent; }
   .nav-actions { display: none; }
