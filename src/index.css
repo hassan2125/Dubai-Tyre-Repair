@@ -217,8 +217,8 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
 .brand-section .eyebrow { color: var(--amber-dark); }
 .brand-window { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .brand-track { display: flex; width: max-content; gap: 16px; animation: scroll-brands 60s linear infinite; }
-.brand-chip { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-width: 140px; height: 100px; padding: 16px 20px; background: #222226; border: 1px solid #3a3a40; border-radius: 12px; transition: background .2s, border-color .2s, box-shadow .2s; }
-.brand-chip:hover { background: #2b2b30; border-color: var(--amber); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.brand-chip { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-width: 140px; height: 100px; padding: 16px 20px; background: #29292d; border: 1px solid #45454c; border-radius: 12px; transition: background .2s, border-color .2s, box-shadow .2s; }
+.brand-chip:hover { background: #333338; border-color: var(--amber); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
 .brand-chip img { max-height: 40px; max-width: 90px; object-fit: contain; opacity: 1; transition: transform .2s, opacity .2s; }
 .brand-chip:hover img { opacity: 1; }
 .brand-chip:hover img { transform: scale(1.08); }
@@ -738,7 +738,6 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
 .dropdown-menu { background: #18181b; box-shadow: 0 24px 60px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.14); }
 .dropdown-menu button:hover, .service-row:hover { background: #27272a; }
 .brand-section { background: #141416; }
-.brand-chip:hover { background: #27272a; box-shadow: 0 6px 20px rgba(0,0,0,.3); }
 .contact-band, .map-section { background: #141416; }
 .how-it-works { background: linear-gradient(180deg, #141416 0%, #101012 100%); }
 .step { background: linear-gradient(180deg, rgba(39,39,42,.98) 0%, rgba(24,24,27,.96) 100%); border-color: rgba(63,63,70,.9); box-shadow: 0 12px 30px rgba(0,0,0,.18); }

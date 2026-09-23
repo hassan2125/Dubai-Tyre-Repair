@@ -8,12 +8,12 @@ import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
 
 const coveragePins = [
-  { name: 'Dubai Marina', x: '23%', y: '67%' },
+  { name: 'Dubai Marina', x: '31%', y: '63%' },
   { name: 'Jumeirah', x: '39%', y: '49%' },
-  { name: 'Downtown', x: '55%', y: '43%' },
-  { name: 'Business Bay', x: '59%', y: '57%' },
+  { name: 'Downtown', x: '56%', y: '49%' },
+  { name: 'Business Bay', x: '53%', y: '57%' },
   { name: 'Deira', x: '73%', y: '30%' },
-  { name: 'Mirdif', x: '82%', y: '50%' },
+  { name: 'Mirdif', x: '82%', y: '33%' },
 ];
 
 export default function Contact() {
