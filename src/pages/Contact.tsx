@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, MapPin, Phone, Timer, ShieldCheck, BadgeCheck, Headphones } from 'lucide-react';
+import { ArrowRight, Check, ExternalLink, MapPin, Phone, Star, Timer, ShieldCheck, Headphones } from 'lucide-react';
 import { heroImages, phone, phoneDisplay, whatsapp } from '@/data/site';
 import { WhatsAppIcon } from '@/components/Icons';
 import BgHero from '@/components/BgHero';
@@ -47,6 +47,21 @@ export default function Contact() {
             <div className="coverage-note">
               <MapPin size={17} />
               <span><strong>Serving all Dubai areas</strong><small>Marina · Downtown · Jumeirah · Al Quoz · Deira · Mirdif and beyond</small></span>
+            </div>
+            <div className="contact-trust-card">
+              <div className="contact-trust-summary">
+                <strong className="contact-trust-rating">4.9</strong>
+                <div className="contact-trust-meta">
+                  <span className="contact-trust-stars" role="img" aria-label="5 out of 5 stars">
+                    {Array.from({ length: 5 }, (_, index) => <Star key={index} size={14} fill="currentColor" />)}
+                  </span>
+                  <span>5,000+ drivers helped across Dubai</span>
+                </div>
+              </div>
+              <div className="contact-trust-points">
+                <span><Check size={14} /> ~10 min average arrival</span>
+                <span><Check size={14} /> Priced before we start</span>
+              </div>
             </div>
           </div>
           <BookingForm />

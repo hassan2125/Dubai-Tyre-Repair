@@ -2,6 +2,7 @@ import { ArrowRight, Check, Clock3, CreditCard, Sparkles, Star, Zap } from 'luci
 import { navigate } from '@/lib/navigate';
 import { heroImages, services, testimonialsData, whatsapp } from '@/data/site';
 import BgHero from '@/components/BgHero';
+import HowItWorks from '@/components/HowItWorks';
 import BrandCarousel from '@/components/BrandCarousel';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
@@ -26,7 +27,12 @@ export default function Home() {
               <img key={testimonial.name} src={testimonial.avatar} alt={`${testimonial.name} customer`} />
             ))}
           </span>
-          <span><strong>5000+</strong> drivers helped in Dubai</span>
+          <span className="hero-note-copy">
+            <span className="hero-note-stars" role="img" aria-label="4.9 out of 5 stars">
+              {Array.from({ length: 5 }, (_, index) => <Star key={index} size={14} fill="currentColor" />)}
+            </span>
+            <span className="hero-note-text"><strong>5,000+ drivers helped</strong> · <strong>4.9</strong> average rating</span>
+          </span>
         </div>
       </BgHero>
 
@@ -106,24 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section how-it-works">
-        <div className="container">
-          <div className="section-head centered">
-            <span className="eyebrow">Simple by design</span>
-            <h2>Help is three taps away.</h2>
-            <p>We built our service around one thing: getting you moving with less fuss.</p>
-          </div>
-          <div className="steps-grid">
-            {([['01', 'Tell us what happened', 'Message us on WhatsApp or call our team.'], ['02', 'Share your location', 'Drop a pin or tell us your area in Dubai.'], ['03', 'We get you moving', 'Our mobile expert arrives and sorts it on the spot.']] as const).map(([number, title, text]) => (
-              <div className="step" key={number} data-number={number}>
-                <span className="step-number">{number}</span>
-                <div><h3>{title}</h3><p>{text}</p></div>
-                <ArrowRight size={19} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorks />
 
       <BrandCarousel />
       <Testimonials />

@@ -62,7 +62,7 @@ export default function Faq({ variant = 'default' }: FaqProps) {
       <div className="container">
         <div className="section-head centered">
           <span className="eyebrow">Frequently asked questions</span>
-          <h2>Got a question?<br /><em>We've got the answer.</em></h2>
+          <h2 className="faq-heading">Got a question? <em>We've got<br />the answer.</em></h2>
           <p>Everything you need to know before booking. If something isn't covered here, just ask us directly.</p>
         </div>
         <div className="faq-list">

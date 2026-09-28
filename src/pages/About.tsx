@@ -60,7 +60,7 @@ export default function About() {
         <div className="container">
           <div className="section-head centered">
             <span className="eyebrow">By the numbers</span>
-            <h2>What our work<br /><em>looks like.</em></h2>
+            <h2>Trusted where it counts.</h2>
           </div>
           <div className="about-stats-vertical">
             <AnimatedStat target={5000} suffix="+" label="customers helped" />
