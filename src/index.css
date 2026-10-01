@@ -720,7 +720,7 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
   .offer .button, .dark-strip .button, .gallery-cta .button { display: none; }
   .cta-buttons { display: flex; flex-direction: column; width: 100%; }
   .cta-right { max-width: 100%; }
-  .floating-wa { display: none; }
+  .floating-wa { bottom: calc(16px + env(safe-area-inset-bottom)); }
   .bg-hero { min-height: auto; padding-bottom: 0; }
   .bg-hero-content { padding: 48px 0 40px; max-width: 100%; }
   .bg-hero-content h1 { font-size: 32px; margin-top: 14px; }
