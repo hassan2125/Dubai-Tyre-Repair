@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Phone, Search, ShieldCheck } from 'lucide-react';
-import { heroImages, phone, phoneDisplay, whatsapp } from '@/data/site';
+import { heroImages, phone, phoneDisplay, tyreBrands, whatsapp } from '@/data/site';
 import { WhatsAppIcon } from '@/components/Icons';
 import BgHero from '@/components/BgHero';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
+import ServiceAreas from '@/components/ServiceAreas';
 
 type CarCountry = 'american' | 'british' | 'french' | 'german' | 'italian' | 'japanese' | 'swedish';
 
@@ -60,28 +61,6 @@ const carFilters = [
   { value: 'japanese', label: 'Japanese' },
   { value: 'swedish', label: 'Swedish' },
 ] as const;
-
-interface TyreBrand {
-  name: string;
-  logoSlug?: string;
-  wordmark?: string;
-}
-
-const tyreBrands: TyreBrand[] = [
-  { name: 'Michelin', logoSlug: 'michelin' },
-  { name: 'Bridgestone', logoSlug: 'bridgestone' },
-  { name: 'Goodyear', logoSlug: 'goodyear' },
-  { name: 'Continental', logoSlug: 'continental' },
-  { name: 'Pirelli', logoSlug: 'pirelli' },
-  { name: 'Kumho', logoSlug: 'kumho' },
-  { name: 'Giti', logoSlug: 'giti' },
-  { name: 'Hankook', logoSlug: 'hankook' },
-  { name: 'Yokohama', logoSlug: 'yokohama' },
-  { name: 'Dunlop', logoSlug: 'dunlop' },
-  { name: 'China-made tyres', wordmark: 'TYRES' },
-  { name: 'Prinx', wordmark: 'PRINX' },
-  { name: 'Fortune', wordmark: 'FORTUNE' },
-];
 
 export default function Brands() {
   const [activeCarFilter, setActiveCarFilter] = useState<(typeof carFilters)[number]['value']>('all');
@@ -205,6 +184,8 @@ export default function Brands() {
           <p className="brands-stock-note">Tyre brands and sizes are subject to stock. We confirm availability, specifications, and pricing with you before fitting.</p>
         </div>
       </section>
+
+      <ServiceAreas />
 
       <Testimonials />
       <Faq variant="brands" />

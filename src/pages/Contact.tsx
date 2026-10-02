@@ -6,6 +6,7 @@ import BookingForm from '@/components/BookingForm';
 import Testimonials from '@/components/Testimonials';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
+import ServiceAreas from '@/components/ServiceAreas';
 
 const coveragePins = [
   { name: 'Dubai Marina', x: '31%', y: '63%' },
@@ -98,6 +99,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <ServiceAreas />
 
       <Testimonials />
 

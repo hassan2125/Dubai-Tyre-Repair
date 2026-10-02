@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
+import ServiceAreas from '@/components/ServiceAreas';
 
 function AnimatedStat({ target, suffix, label }: { target: number; suffix: string; label: string }) {
   const [value, setValue] = useState(0);
@@ -178,6 +179,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <ServiceAreas />
 
       <Testimonials />
       <Faq variant="about" />

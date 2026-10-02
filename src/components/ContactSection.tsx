@@ -20,28 +20,28 @@ export default function ContactSection({ eyebrow, title, titleEm, description, c
           <p>{description}</p>
           <div className="contact-info-list">
             <a className="contact-info-row" href={`tel:${phone}`}>
-              <Phone size={18} />
+              <span className="contact-info-icon"><Phone size={18} /></span>
               <span>
                 <strong>Call us</strong>
                 <small>{phoneDisplay}</small>
               </span>
             </a>
             <a className="contact-info-row" href={`mailto:${email}`}>
-              <Mail size={18} />
+              <span className="contact-info-icon"><Mail size={18} /></span>
               <span>
                 <strong>Email</strong>
                 <small>{email}</small>
               </span>
             </a>
             <div className="contact-info-row">
-              <MapPin size={18} />
+              <span className="contact-info-icon"><MapPin size={18} /></span>
               <span>
                 <strong>Address</strong>
                 <small>{address}</small>
               </span>
             </div>
             <div className="contact-info-row">
-              <Clock size={18} />
+              <span className="contact-info-icon"><Clock size={18} /></span>
               <span>
                 <strong>Working hours</strong>
                 <small>{workingHours}</small>

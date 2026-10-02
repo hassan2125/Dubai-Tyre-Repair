@@ -8,7 +8,7 @@ const serviceAreas = [
   'Dubai South', 'Emirates Hills', 'The Springs', 'Green Community', 'Jumeirah Village Triangle',
   'Sports City', 'Discovery Gardens', 'Motor City', 'Al Barari', 'Jumeirah Islands',
   'Victory Heights', 'The Meadows',
-  'The Springs 1 to 10',
+  'The Springs 1-10',
 ];
 
 export default function ServiceAreas() {

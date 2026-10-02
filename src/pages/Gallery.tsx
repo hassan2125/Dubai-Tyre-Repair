@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
+import ServiceAreas from '@/components/ServiceAreas';
 
 const categories = ['All', ...services.map(s => s.title)];
 
@@ -73,6 +74,8 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+
+      <ServiceAreas />
 
       {lightbox !== null && (
         <div className="gallery-lightbox" onClick={() => setLightbox(null)}>

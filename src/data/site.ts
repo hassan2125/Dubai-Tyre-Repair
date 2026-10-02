@@ -60,6 +60,28 @@ export const brandLogos: BrandLogo[] = [
   { name: 'Rolls-Royce', logo: 'https://www.carlogos.org/car-logos/rolls-royce-logo.png' },
 ];
 
+export interface TyreBrand {
+  name: string;
+  logoSlug?: string;
+  wordmark?: string;
+}
+
+export const tyreBrands: TyreBrand[] = [
+  { name: 'Michelin', logoSlug: 'michelin' },
+  { name: 'Bridgestone', logoSlug: 'bridgestone' },
+  { name: 'Goodyear', logoSlug: 'goodyear' },
+  { name: 'Continental', logoSlug: 'continental' },
+  { name: 'Pirelli', logoSlug: 'pirelli' },
+  { name: 'Kumho', logoSlug: 'kumho' },
+  { name: 'Giti', logoSlug: 'giti' },
+  { name: 'Hankook', logoSlug: 'hankook' },
+  { name: 'Yokohama', logoSlug: 'yokohama' },
+  { name: 'Dunlop', logoSlug: 'dunlop' },
+  { name: 'China-made tyres', wordmark: 'TYRES' },
+  { name: 'Prinx', wordmark: 'PRINX' },
+  { name: 'Fortune', wordmark: 'FORTUNE' },
+];
+
 export interface Testimonial {
   quote: string;
   name: string;

@@ -8,6 +8,7 @@ import ContactSection from '@/components/ContactSection';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
 import NotFound from '@/pages/NotFound';
+import ServiceAreas from '@/components/ServiceAreas';
 
 const relatedServiceSlugs: Record<string, [string, string, string]> = {
   'flat-tyre-repair': ['mobile-tyre-fitting', 'new-tyre-replacement', 'emergency-tyre-repair'],
@@ -144,6 +145,8 @@ export default function ServicePage({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+
+      <ServiceAreas />
 
       <section className="related-services">
         <div className="container">

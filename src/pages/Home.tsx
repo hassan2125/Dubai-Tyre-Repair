@@ -1,6 +1,6 @@
 import { ArrowRight, BadgeCheck, Check, Clock3, Phone, Star, Zap } from 'lucide-react';
 import { navigate } from '@/lib/navigate';
-import { heroImages, phone, phoneDisplay, services, testimonialsData, whatsapp } from '@/data/site';
+import { heroImages, phone, phoneDisplay, services, testimonialsData, tyreBrands, whatsapp } from '@/data/site';
 import ServiceCard from '@/components/ServiceCard';
 import { WhatsAppIcon } from '@/components/Icons';
 import BgHero from '@/components/BgHero';
@@ -110,6 +110,30 @@ export default function Home() {
       <ServiceAreas />
 
       <BrandCarousel />
+      <section className="section home-tyre-brands" aria-labelledby="home-tyre-brands-title">
+        <div className="container">
+          <div className="home-tyre-brands-head">
+            <div>
+              <span className="eyebrow">Tyre brands</span>
+              <h2 id="home-tyre-brands-title">Trusted names for your next set.</h2>
+            </div>
+            <p>Ask our team to check tyre sizes, stock, and fitment for your vehicle.</p>
+          </div>
+          <ul className="home-tyre-brand-grid" aria-label="Featured tyre brands">
+            {tyreBrands.slice(0, 5).map((brand) => (
+              <li className="home-tyre-brand" key={brand.name}>
+                <span className="home-tyre-brand-logo">
+                  {brand.logoSlug && <img src={`https://www.carlogos.org/tire-logos/${brand.logoSlug}-logo.png`} alt={`${brand.name} logo`} loading="lazy" />}
+                </span>
+                <span className="home-tyre-brand-name">{brand.name}</span>
+              </li>
+            ))}
+          </ul>
+          <button className="text-link home-tyre-brands-link" onClick={() => navigate('/brands')}>
+            Explore all tyre brands <ArrowRight size={15} />
+          </button>
+        </div>
+      </section>
       <Testimonials />
       <Faq variant="default" />
       <ContactSection eyebrow="Need a hand?" title="Let's get you" titleEm="moving again." description="Tell us a little about what you need. We'll take care of the rest." />
