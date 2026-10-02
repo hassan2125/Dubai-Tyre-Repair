@@ -16,7 +16,7 @@ export default function ServiceAreas() {
     <section className="services-areas">
       <div className="container">
         <span className="eyebrow">Where we work</span>
-        <h2>Every service, every corner of Dubai.</h2>
+        <h2>Every service, <em>every corner of Dubai.</em></h2>
         <p className="services-areas-intro">All five services reach across the city. Arrival times depend on traffic and location.</p>
         <div className="services-area-list">
           {serviceAreas.map((area, index) => (

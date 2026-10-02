@@ -288,14 +288,23 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
 .section.home-tyre-brands { padding: 76px 0; border-top: 1px solid var(--line); background-color: var(--charcoal); background-image: linear-gradient(rgba(12,12,14,.8), rgba(12,12,14,.84)), url('https://images.pexels.com/photos/4492044/pexels-photo-4492044.jpeg'); background-position: center; background-size: cover; }
 .home-tyre-brands-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 28px; }
 .home-tyre-brands-head h2 { margin-top: 12px; font-size: clamp(28px, 3.2vw, 40px); }
-.home-tyre-brands-head p { max-width: 380px; color: var(--muted); font-size: 14px; line-height: 1.65; }
-.home-tyre-brand-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
-.home-tyre-brand { display: flex; min-width: 0; min-height: 164px; flex-direction: column; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: linear-gradient(155deg, rgba(28,28,32,.94), rgba(20,20,23,.96)); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.home-tyre-brands-head-side { display: grid; justify-items: end; gap: 14px; max-width: 380px; }
+.home-tyre-brands-head-side p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+.home-tyre-brand-controls { display: flex; gap: 8px; }
+.home-tyre-brand-arrow { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(16,16,18,.72); color: var(--ink); transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
+.home-tyre-brand-arrow:hover { transform: translateY(-2px); border-color: var(--amber); background: var(--amber); color: #101012; }
+.home-tyre-brand-arrow:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.home-tyre-brand-grid { display: flex; gap: 12px; overflow-x: auto; margin: 0; padding: 3px 1px 12px; list-style: none; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.home-tyre-brand-grid::-webkit-scrollbar { display: none; }
+.home-tyre-brand-grid:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+.home-tyre-brand { display: grid; flex: 0 0 calc((100% - 36px) / 4); grid-template-rows: minmax(112px, 1fr) auto; justify-items: center; min-width: 0; min-height: 194px; gap: 18px; padding: 20px 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: linear-gradient(155deg, rgba(28,28,32,.94), rgba(20,20,23,.96)); scroll-snap-align: start; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .home-tyre-brand:hover { transform: translateY(-3px); border-color: rgba(245,158,11,.55); box-shadow: 0 12px 24px rgba(0,0,0,.2); }
-.home-tyre-brand-logo { display: grid; flex: 0 0 78px; place-items: center; width: 100%; height: 78px; }
-.home-tyre-brand-logo img { display: block; width: min(156px, 100%); height: 100%; object-fit: contain; }
+.home-tyre-brand-logo { display: grid; place-items: center; width: 100%; height: 100%; min-height: 112px; }
+.home-tyre-brand-logo img { display: block; width: min(156px, 100%); height: 100%; max-height: 112px; object-fit: contain; }
+.home-tyre-brand-wordmark { color: var(--ink); font: 700 20px/1 'Sora', sans-serif; letter-spacing: .03em; text-align: center; text-shadow: 0 0 8px rgba(244,244,245,.12); }
 .home-tyre-brand-name { display: block; flex: 0 0 auto; width: 100%; color: var(--ink-soft); font: 600 12px/1.3 'Inter', sans-serif; text-align: center; }
-.home-tyre-brands-link { margin-top: 24px; }
+.home-tyre-brands-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 16px; }
+.home-tyre-brands-link { margin-top: 0; }
 
 .testimonials { background: var(--paper); padding: 90px 0 80px; overflow: hidden; }
 .testimonial-carousel { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
@@ -1122,7 +1131,7 @@ h1 em, h2 em, h3 em,
 }
 
 @media (max-width: 900px) {
-  .home-tyre-brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-tyre-brand { flex-basis: calc((100% - 12px) / 2); }
   .brands-car-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .brands-tyre-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -1131,11 +1140,15 @@ h1 em, h2 em, h3 em,
   .section.home-tyre-brands { padding: 52px 0; }
   .home-tyre-brands-head { align-items: flex-start; flex-direction: column; gap: 12px; }
   .home-tyre-brands-head h2 { font-size: 27px; }
-  .home-tyre-brands-head p { font-size: 13px; }
-  .home-tyre-brand-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
-  .home-tyre-brand { min-height: 146px; padding: 14px 10px; }
-  .home-tyre-brand-logo { flex-basis: 64px; height: 64px; }
-  .home-tyre-brand:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 5px); justify-self: center; }
+  .home-tyre-brands-head-side { width: 100%; max-width: none; justify-items: start; }
+  .home-tyre-brands-head-side p { font-size: 13px; }
+  .home-tyre-brands-bottom { margin-top: 14px; }
+  .home-tyre-brand-controls { flex: 0 0 auto; }
+  .home-tyre-brand-grid { gap: 9px; padding-right: 1px; }
+  .home-tyre-brand { flex-basis: 100%; min-height: 228px; grid-template-rows: minmax(132px, 1fr) auto; gap: 24px; padding: 20px 14px; }
+  .home-tyre-brand-logo { min-height: 132px; }
+  .home-tyre-brand-logo img { max-height: 132px; }
+  .home-tyre-brand-wordmark { font-size: 24px; }
   .brands-car-tools { align-items: stretch; flex-direction: column-reverse; gap: 12px; }
   .brands-car-search { width: 100%; }
   .brands-car-filters { margin: 0 -16px; padding: 0 16px; }
