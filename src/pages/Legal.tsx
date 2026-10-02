@@ -20,7 +20,7 @@ export default function Legal({ terms = false }: { terms?: boolean }) {
               <h2>Using our service</h2>
               <p>By booking Car Tyre Repair Dubai, you agree to provide accurate contact and location details so our team can reach you. Service availability and arrival times can vary based on traffic, weather, and demand.</p>
               <h2>Pricing and payment</h2>
-              <p>We confirm the scope and price of work before starting. Additional work will only be carried out with your approval. We accept secure online payments and other payment methods communicated by our team.</p>
+              <p>We confirm the scope and price of work before starting. Additional work will only be carried out with your approval. Our team will communicate the available payment methods before service.</p>
               <h2>Safety and responsibility</h2>
               <p>Our technicians work to professional standards and will advise if a vehicle is unsafe to drive. The customer remains responsible for following safety advice and providing a safe place for service where possible.</p>
               <h2>Contact</h2>

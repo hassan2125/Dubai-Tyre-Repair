@@ -11,10 +11,10 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo light />
           <p className="footer-copy">Dubai's dependable mobile tyre repair and roadside assistance team. We come to you, wherever you are.</p>
-          <div className="social-icons">
-            <a href="#" aria-label="Facebook"><FacebookIcon size={17} /></a>
-            <a href="#" aria-label="Instagram"><InstagramIcon size={17} /></a>
-            <a href="#" aria-label="TikTok"><TikTokIcon size={17} /></a>
+          <div className="social-icons" aria-label="Social media profiles">
+            <span role="img" aria-label="Facebook"><FacebookIcon size={17} /></span>
+            <span role="img" aria-label="Instagram"><InstagramIcon size={17} /></span>
+            <span role="img" aria-label="TikTok"><TikTokIcon size={17} /></span>
           </div>
           <div className="social-proof"><span className="rating">★★★★★</span><span>4.9 / 5 from 500+ reviews</span></div>
         </div>
@@ -22,6 +22,7 @@ export default function Footer() {
           <h4>Explore</h4>
           <button onClick={() => navigate('/about')}>About us</button>
           <button onClick={() => navigate('/services')}>All Services</button>
+          <button onClick={() => navigate('/brands')}>Brands we serve</button>
           <button onClick={() => navigate('/gallery')}>Gallery</button>
           <button onClick={() => navigate('/contact')}>Contact</button>
           <button onClick={() => navigate('/privacy-policy')}>Privacy policy</button>
@@ -44,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© 2025 Car Tyre Repair Dubai. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Car Tyre Repair Dubai. All rights reserved.</span>
         <span>Powered by <a href="https://prismxmedia.com/" target="_blank" rel="noreferrer" className="footer-credit">Prismx Media</a></span>
       </div>
     </footer>

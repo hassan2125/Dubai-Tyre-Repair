@@ -32,7 +32,7 @@ export default function Contact() {
         <div className="container contact-page-grid">
           <div className="contact-options">
             <span className="eyebrow">Choose your easiest route</span>
-            <h2>Let's get your<br /><em>day back.</em></h2>
+            <h2><span className="contact-heading-line">Let's get your</span><br /><em>day back.</em></h2>
             <p>Our team is standing by. For the quickest response, WhatsApp your location and a photo of the issue.</p>
             <a className="contact-option whatsapp-option" href={whatsapp} target="_blank" rel="noreferrer">
               <span><WhatsAppIcon size={22} /></span>
@@ -59,7 +59,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="contact-trust-points">
-                <span><Check size={14} /> ~10 min average arrival</span>
+                <span><Check size={14} /> 10-minute target arrival</span>
                 <span><Check size={14} /> Priced before we start</span>
               </div>
             </div>

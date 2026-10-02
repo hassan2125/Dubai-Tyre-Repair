@@ -1,14 +1,31 @@
-import { ArrowRight, Check, MapPin, ShieldCheck, Timer, Headphones, BadgeCheck } from 'lucide-react';
-import { serviceDetails, whatsapp } from '@/data/site';
+import { ArrowRight, Check, MapPin, ShieldCheck, Timer, BadgeCheck } from 'lucide-react';
+import { navigate } from '@/lib/navigate';
+import { services, serviceDetails, whatsapp } from '@/data/site';
 import { WhatsAppIcon } from '@/components/Icons';
 import BgHero from '@/components/BgHero';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 import FinalCta from '@/components/FinalCta';
 import Faq from '@/components/Faq';
+import NotFound from '@/pages/NotFound';
+
+const relatedServiceSlugs: Record<string, [string, string, string]> = {
+  'flat-tyre-repair': ['mobile-tyre-fitting', 'new-tyre-replacement', 'emergency-tyre-repair'],
+  'mobile-tyre-fitting': ['new-tyre-replacement', 'spare-tyre-replacement', 'flat-tyre-repair'],
+  'new-tyre-replacement': ['mobile-tyre-fitting', 'flat-tyre-repair', 'spare-tyre-replacement'],
+  'spare-tyre-replacement': ['flat-tyre-repair', 'emergency-tyre-repair', 'mobile-tyre-fitting'],
+  'emergency-tyre-repair': ['flat-tyre-repair', 'spare-tyre-replacement', 'mobile-tyre-fitting'],
+};
 
 export default function ServicePage({ slug }: { slug: string }) {
-  const detail = serviceDetails[slug] || serviceDetails['flat-tyre-repair'];
+  const detail = serviceDetails[slug];
+  if (!detail) return <NotFound />;
+
+  const relatedSlugs = relatedServiceSlugs[slug] ?? relatedServiceSlugs['flat-tyre-repair'];
+  const relatedServices = relatedSlugs.flatMap((relatedSlug) => {
+    const service = services.find((item) => item.slug === relatedSlug);
+    return service ? [service] : [];
+  });
 
   return (
     <>
@@ -67,10 +84,10 @@ export default function ServicePage({ slug }: { slug: string }) {
           </div>
           <div className="included-cta">
             <div className="included-cta-stats">
-              <div><span>Price</span><strong>from <em>AED 100</em></strong></div>
+              <div><span>Price</span><strong>from <em>AED 150</em></strong></div>
               <div><span>Time on-site</span><strong>15–30 <em>min</em></strong></div>
               <div><span>Warranty</span><strong>6 <em>months</em></strong></div>
-              <div><span>Avg arrival</span><strong>~10 <em>min</em></strong></div>
+              <div><span>Target arrival</span><strong>~10 <em>min</em></strong></div>
             </div>
             <a className="button included-cta-button" href={whatsapp} target="_blank" rel="noreferrer">
               <WhatsAppIcon size={17} className="service-cta-whatsapp-icon" /> Book {detail.title}
@@ -125,6 +142,37 @@ export default function ServicePage({ slug }: { slug: string }) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="related-services">
+        <div className="container">
+          <header className="related-services-head">
+            <span className="eyebrow">Explore more</span>
+            <h2>Not quite what you need?<br /><em>We do it all.</em></h2>
+            <p>One mobile team for every roadside moment, with clear pricing and warranty-backed work.</p>
+          </header>
+          <div className="related-services-grid">
+            {relatedServices.map((service) => {
+              const Icon = service.icon;
+              return (
+                <article className="related-service-card" key={service.slug}>
+                  <div className="related-service-top">
+                    <span className="related-service-icon"><Icon size={21} /></span>
+                    <strong className="related-service-price">From AED 150</strong>
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.short}</p>
+                  <button className="related-service-link" onClick={() => navigate(`/${service.slug}`)}>
+                    View service <ArrowRight size={16} />
+                  </button>
+                </article>
+              );
+            })}
+          </div>
+          <button className="button button-ghost related-services-all" onClick={() => navigate('/services')}>
+            View all five services <ArrowRight size={16} />
+          </button>
         </div>
       </section>
 

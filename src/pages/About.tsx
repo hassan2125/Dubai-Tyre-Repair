@@ -127,7 +127,7 @@ export default function About() {
               <div className="mvv-card-body">
                 <span className="mvv-icon"><Target size={24} /></span>
                 <h3>Our Mission</h3>
-                <p>To make roadside tyre help fast, fair, and stress-free for every driver in Dubai. We bring professional service directly to you, so a flat tyre or dead battery never ruins your day.</p>
+                <p>To make roadside tyre help fast, fair, and stress-free for every driver in Dubai. We bring professional service directly to you, so a flat tyre never ruins your day.</p>
               </div>
             </div>
 
@@ -169,7 +169,7 @@ export default function About() {
           <div className="about-inline-cta">
             <div>
               <h2>Like what you're reading?</h2>
-              <p>Skip the queue — our mobile crew is 10 minutes away.</p>
+              <p>Our mobile crew is ready to assist across Dubai.</p>
             </div>
             <div className="about-inline-cta-actions">
               <a className="button" href={`tel:${phone}`}><Phone size={16} /> {phoneDisplay}</a>

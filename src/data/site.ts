@@ -1,9 +1,9 @@
-import { Battery, Car, Gauge, Sparkles, Wrench, Zap, type LucideIcon } from 'lucide-react';
+import { Car, Gauge, Sparkles, Wrench, Zap, type LucideIcon } from 'lucide-react';
 
 export const phone = '+971552978485';
 export const phoneDisplay = '+971 55 297 8485';
 export const whatsapp = 'https://wa.me/971552978485';
-export const email = 'info@tyrerescue.ae';
+export const email = 'info@cartyrerepairdubai.com';
 export const address = 'Dubai, United Arab Emirates';
 export const workingHours = 'Open 24 Hours · 7 Days a Week';
 
@@ -18,7 +18,6 @@ export const heroImages = {
   newTyre: '/images/Services/New%20Tyre%20Replacement.jpeg',
   spareTyre: '/images/Services/Spare%20Tyre%20Replacement.jpeg',
   emergency: '/images/Services/Emergency%20Tyre%20Repair.jpeg',
-  battery: '/images/Services/Battery%20Replacement.jpeg',
   legal: 'https://images.pexels.com/photos/4062376/pexels-photo-4062376.jpeg?auto=compress&cs=tinysrgb&w=1600',
   cta: 'https://images.pexels.com/photos/4062376/pexels-photo-4062376.jpeg?auto=compress&cs=tinysrgb&w=1600',
 };
@@ -37,44 +36,27 @@ export const services: Service[] = [
   { slug: 'new-tyre-replacement', title: 'New Tyre Replacement', short: 'Quality tyres supplied and fitted on the spot, with expert guidance.', icon: Sparkles, image: heroImages.newTyre },
   { slug: 'spare-tyre-replacement', title: 'Spare Tyre Replacement', short: 'Safe spare wheel fitting so you can get back on the road with confidence.', icon: Car, image: heroImages.spareTyre },
   { slug: 'emergency-tyre-repair', title: 'Emergency Tyre Repair', short: '24/7 roadside support for urgent tyre problems across Dubai.', icon: Zap, image: heroImages.emergency },
-  { slug: 'battery-replacement', title: 'Battery Replacement', short: 'Reliable car battery delivery and installation at your location.', icon: Battery, image: heroImages.battery },
 ];
 
 export interface BrandLogo {
   name: string;
   logo: string;
+  lightLogo?: boolean;
 }
 
 export const brandLogos: BrandLogo[] = [
-  { name: 'Toyota', logo: 'https://www.carlogos.org/car-logos/toyota-logo.png' },
   { name: 'Mercedes-Benz', logo: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png' },
   { name: 'BMW', logo: 'https://www.carlogos.org/car-logos/bmw-logo.png' },
-  { name: 'Nissan', logo: 'https://www.carlogos.org/car-logos/nissan-logo.png' },
   { name: 'Ford', logo: 'https://www.carlogos.org/car-logos/ford-logo.png' },
-  { name: 'Honda', logo: 'https://www.carlogos.org/car-logos/honda-logo.png' },
-  { name: 'Audi', logo: 'https://www.carlogos.org/car-logos/audi-logo.png' },
-  { name: 'Lexus', logo: 'https://www.carlogos.org/car-logos/lexus-logo.png' },
+  { name: 'Audi', logo: 'https://www.carlogos.org/car-logos/audi-logo.png', lightLogo: true },
   { name: 'Porsche', logo: 'https://www.carlogos.org/car-logos/porsche-logo.png' },
   { name: 'Volkswagen', logo: 'https://www.carlogos.org/car-logos/volkswagen-logo.png' },
   { name: 'Land Rover', logo: 'https://www.carlogos.org/car-logos/land-rover-logo.png' },
-  { name: 'Jeep', logo: 'https://www.carlogos.org/car-logos/jeep-logo.png' },
-  { name: 'Hyundai', logo: 'https://www.carlogos.org/car-logos/hyundai-logo.png' },
-  { name: 'Kia', logo: 'https://www.carlogos.org/car-logos/kia-logo.png' },
-  { name: 'Tesla', logo: 'https://www.carlogos.org/car-logos/tesla-logo.png' },
   { name: 'Volvo', logo: 'https://www.carlogos.org/car-logos/volvo-logo.png' },
-  { name: 'Mazda', logo: 'https://www.carlogos.org/car-logos/mazda-logo.png' },
-  { name: 'Mitsubishi', logo: 'https://www.carlogos.org/car-logos/mitsubishi-logo.png' },
-  { name: 'Chevrolet', logo: 'https://www.carlogos.org/car-logos/chevrolet-logo.png' },
   { name: 'GMC', logo: 'https://www.carlogos.org/car-logos/gmc-logo.png' },
-  { name: 'MG', logo: 'https://www.carlogos.org/car-logos/mg-logo.png' },
-  { name: 'Geely', logo: 'https://www.carlogos.org/car-logos/geely-logo.png' },
-  { name: 'BYD', logo: 'https://www.carlogos.org/car-logos/byd-logo.png' },
-  { name: 'Chery', logo: 'https://www.carlogos.org/car-logos/chery-logo.png' },
-  { name: 'GWM', logo: 'https://www.carlogos.org/car-logos/great-wall-logo.png' },
-  { name: 'Haval', logo: 'https://www.carlogos.org/car-logos/haval-logo.png' },
-  { name: 'Jaguar', logo: 'https://www.carlogos.org/car-logos/jaguar-logo.png' },
+  { name: 'Jaguar', logo: 'https://www.carlogos.org/car-logos/jaguar-logo.png', lightLogo: true },
   { name: 'Bentley', logo: 'https://www.carlogos.org/car-logos/bentley-logo.png' },
-  { name: 'Mini', logo: 'https://www.carlogos.org/car-logos/mini-logo.png' },
+  { name: 'Mini', logo: 'https://www.carlogos.org/car-logos/mini-logo.png', lightLogo: true },
   { name: 'Rolls-Royce', logo: 'https://www.carlogos.org/car-logos/rolls-royce-logo.png' },
 ];
 
@@ -91,7 +73,6 @@ export const testimonialsData: Testimonial[] = [
   { quote: 'The whole experience was incredibly easy. I shared my location on WhatsApp and the team handled everything.', name: 'Sarah M.', location: 'Jumeirah', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
   { quote: 'Professional, honest and fast. The new tyres were fitted at my office while I carried on with my day.', name: 'Daniel R.', location: 'Business Bay', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
   { quote: 'Called them at 2am on Sheikh Zayed Road. They were there in 15 minutes and had me moving again fast.', name: 'Khalid S.', location: 'Sheikh Zayed Road', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/75.jpg' },
-  { quote: 'Booked a battery replacement through WhatsApp. They arrived the same morning with the right battery.', name: 'Priya N.', location: 'Dubai Marina', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/65.jpg' },
   { quote: 'Best roadside service I have used in Dubai. Fair price, no surprises, and very professional staff.', name: 'Ahmed F.', location: 'Al Barsha', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/52.jpg' },
   { quote: 'My spare tyre was fitted properly and they even checked the other wheels for me. Great attention to detail.', name: 'Lisa K.', location: 'Arabian Ranches', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
   { quote: 'I was stranded near Jebel Ali and they reached me faster than anyone else I called. Lifesavers.', name: 'Rajesh P.', location: 'Jebel Ali', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/64.jpg' },
@@ -183,19 +164,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       'https://images.pexels.com/photos/12555009/pexels-photo-12555009.jpeg?auto=compress&cs=tinysrgb&w=900',
     ],
   },
-  'battery-replacement': {
-    title: 'Battery Replacement',
-    kicker: 'A fresh start for your car.',
-    intro: 'Dead battery? Our mobile battery replacement service delivers and installs the right battery at your location, day or night.',
-    image: heroImages.battery,
-    included: ['Battery health assessment', 'Correct battery matching', 'Mobile delivery and fitting', 'Starting and electrical check'],
-    detail: "From a car that won't start in your driveway to a warning light at the office, we test first and replace only when it's the right solution for your vehicle.",
-    gallery: [
-      'https://images.pexels.com/photos/8478228/pexels-photo-8478228.jpeg?auto=compress&cs=tinysrgb&w=900',
-      'https://images.pexels.com/photos/6907042/pexels-photo-6907042.jpeg?auto=compress&cs=tinysrgb&w=900',
-      'https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&cs=tinysrgb&w=900',
-    ],
-  },
 };
 
 export interface GalleryItem {
@@ -207,7 +175,7 @@ export interface GalleryItem {
 
 export const galleryItems: GalleryItem[] = [
   { image: heroImages.flatTyre, title: 'Flat Tyre Assessment', category: 'Flat Tyre Repair', span: true },
-  { image: 'https://images.pexels.com/photos/38581983/pexels-photo-38581983.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Roadside Puncture Repair', category: 'Flat Tyre Repair' },
+  { image: 'https://images.pexels.com/photos/12555009/pexels-photo-12555009.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Tyre Repair In Progress', category: 'Flat Tyre Repair' },
   { image: 'https://images.pexels.com/photos/3806275/pexels-photo-3806275.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Wheel Repair Team', category: 'Flat Tyre Repair' },
   { image: 'https://images.pexels.com/photos/9941648/pexels-photo-9941648.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Flat Tyre Inspection', category: 'Flat Tyre Repair' },
   { image: 'https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'On-Site Tyre Repair', category: 'Flat Tyre Repair' },
@@ -236,10 +204,4 @@ export const galleryItems: GalleryItem[] = [
   { image: 'https://images.pexels.com/photos/13821194/pexels-photo-13821194.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Emergency Mobile Technician', category: 'Emergency Tyre Repair' },
   { image: 'https://images.pexels.com/photos/8869361/pexels-photo-8869361.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Breakdown Assessment', category: 'Emergency Tyre Repair' },
   { image: 'https://images.pexels.com/photos/9518248/pexels-photo-9518248.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Roadside Wheel Change', category: 'Emergency Tyre Repair' },
-  { image: heroImages.battery, title: 'Mobile Battery Replacement', category: 'Battery Replacement', span: true },
-  { image: 'https://images.pexels.com/photos/5572265/pexels-photo-5572265.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Car Battery Installation', category: 'Battery Replacement' },
-  { image: 'https://images.pexels.com/photos/6907042/pexels-photo-6907042.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Battery Jump Start', category: 'Battery Replacement' },
-  { image: 'https://images.pexels.com/photos/4374843/pexels-photo-4374843.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Battery Health Check', category: 'Battery Replacement' },
-  { image: 'https://images.pexels.com/photos/5572260/pexels-photo-5572260.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Jumper Cable Assistance', category: 'Battery Replacement' },
-  { image: 'https://images.pexels.com/photos/13065689/pexels-photo-13065689.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'Engine Diagnostic Support', category: 'Battery Replacement' },
 ];

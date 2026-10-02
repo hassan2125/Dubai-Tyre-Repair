@@ -1,4 +1,4 @@
-import { ArrowRight, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { phone, phoneDisplay, whatsapp, heroImages } from '@/data/site';
 import { WhatsAppIcon } from '@/components/Icons';
 

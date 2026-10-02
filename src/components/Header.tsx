@@ -39,7 +39,7 @@ export default function Header() {
         <div className="container topbar-inner">
           <span>Dubai-wide mobile service</span>
           <span className="topbar-center">Open 24/7</span>
-          <span><Phone size={13} /> {phoneDisplay}</span>
+          <a className="topbar-phone" href={`tel:${phone}`}><Phone size={13} /> {phoneDisplay}</a>
         </div>
       </div>
       <header className={scrolled ? 'header scrolled' : 'header'}>
@@ -72,9 +72,9 @@ export default function Header() {
                   <div className="dropdown-promo" style={{ backgroundImage: `url(${heroImages.mobileFitting})` }}>
                     <div className="dropdown-promo-overlay" />
                     <div className="dropdown-promo-content">
-                      <span className="dropdown-promo-status">Avg 10 min away</span>
-                      <h3>All six services,<br /><em>one mobile team.</em></h3>
-                      <p>Professional tyre and battery help wherever you are in Dubai.</p>
+                      <span className="dropdown-promo-status">10-minute target ETA</span>
+                      <h3>All five services,<br /><em>one mobile team.</em></h3>
+                      <p>Professional tyre assistance wherever you are in Dubai.</p>
                       <button className="dropdown-promo-browse" onClick={() => { navigate('/services'); closeAll(); }}>Browse all services <span>→</span></button>
                       <a className="button whatsapp-button dropdown-promo-whatsapp" href={whatsapp} target="_blank" rel="noreferrer" onClick={closeAll}>
                         <WhatsAppIcon size={16} /> Not sure? Ask us
@@ -85,6 +85,7 @@ export default function Header() {
               )}
             </div>
 
+            <button className={path === '/brands' ? 'active' : ''} onClick={() => { navigate('/brands'); closeAll(); }}>Brands</button>
             <button className={path === '/gallery' ? 'active' : ''} onClick={() => { navigate('/gallery'); closeAll(); }}>Gallery</button>
             <button className={path === '/about' ? 'active' : ''} onClick={() => { navigate('/about'); closeAll(); }}>About</button>
             <button className={path === '/contact' ? 'active' : ''} onClick={() => { navigate('/contact'); closeAll(); }}>Contact</button>

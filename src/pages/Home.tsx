@@ -1,8 +1,11 @@
-import { ArrowRight, Check, Clock3, CreditCard, Sparkles, Star, Zap } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Check, Clock3, Phone, Star, Zap } from 'lucide-react';
 import { navigate } from '@/lib/navigate';
-import { heroImages, services, testimonialsData, whatsapp } from '@/data/site';
+import { heroImages, phone, phoneDisplay, services, testimonialsData, whatsapp } from '@/data/site';
+import ServiceCard from '@/components/ServiceCard';
+import { WhatsAppIcon } from '@/components/Icons';
 import BgHero from '@/components/BgHero';
 import HowItWorks from '@/components/HowItWorks';
+import ServiceAreas from '@/components/ServiceAreas';
 import BrandCarousel from '@/components/BrandCarousel';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
@@ -14,10 +17,10 @@ export default function Home() {
     <>
       <BgHero
         image={heroImages.home}
-        eyebrow="Mobile crew online now · avg 10 min away"
+        eyebrow="Mobile team ready across Dubai · response times vary"
         statusEyebrow
         title="Back on the road."
-        titleEm="In 10 minutes."
+        titleEm="With help at your location."
         subtitle="Fast, professional tyre repair and roadside assistance wherever you are in Dubai. No towing. No waiting room. Just expert help at your location."
         showButtons
       >
@@ -38,7 +41,7 @@ export default function Home() {
 
       <section className="usps">
         <div className="container usp-grid">
-          {([[Clock3, 'Arrived in 10 Minutes', 'Fast response, wherever you are'], [Star, '5,000+ Happy Customers', 'Trusted by Dubai drivers'], [Zap, 'Roadside Emergency Repair', 'Help day or night'], [CreditCard, 'Online Payment Accepted', 'Simple, secure checkout']] as const).map(([Icon, title, text]) => (
+          {([[Clock3, '10-Minute Target', 'Arrival times depend on traffic and location'], [Star, '5,000+ Happy Customers', 'Trusted by Dubai drivers'], [Zap, 'Roadside Emergency Repair', 'Help day or night'], [BadgeCheck, 'Upfront Pricing', 'Know the cost before work begins']] as const).map(([Icon, title, text]) => (
             <div className="usp" key={title}>
               <div className="icon-box"><Icon size={21} /></div>
               <div><strong>{title}</strong><small>{text}</small></div>
@@ -52,7 +55,7 @@ export default function Home() {
           <div className="section-head">
             <div>
               <span className="eyebrow">What we do</span>
-              <h2>Six ways<br /><em>to get you moving.</em></h2>
+              <h2>Five ways<br /><em>to get you moving.</em></h2>
             </div>
             <div className="head-side">
               <p>From a late-night puncture to a full set of new tyres, our mobile team brings the workshop to you.</p>
@@ -60,21 +63,7 @@ export default function Home() {
             </div>
           </div>
           <div className="service-grid-6">
-            {services.map((service) => {
-              return (
-                <button className="service-card-6" key={service.slug} onClick={() => navigate(`/${service.slug}`)}>
-                  <div className="service-card-img">
-                    <img src={service.image} alt={`${service.title} service in Dubai`} />
-                    <div className="service-card-overlay" />
-                  </div>
-                  <div className="service-card-body">
-                    <h3>{service.title}</h3>
-                    <p>{service.short}</p>
-                    <span className="card-link">Learn more <ArrowRight size={15} /></span>
-                  </div>
-                </button>
-              );
-            })}
+            {services.map((service) => <ServiceCard service={service} key={service.slug} />)}
           </div>
         </div>
       </section>
@@ -83,7 +72,7 @@ export default function Home() {
         <div className="container split-grid">
           <div className="split-image">
             <img src={heroImages.mobileFitting} alt="Professional mechanic fitting a new tyre" />
-            <span className="stat-card"><strong>10 min</strong><small>average arrival time</small></span>
+            <span className="stat-card"><strong>10 min</strong><small>target arrival time</small></span>
           </div>
           <div className="split-copy">
             <span className="eyebrow">Why Car Tyre Repair Dubai</span>
@@ -92,7 +81,7 @@ export default function Home() {
             <div className="benefit-list">
               <span><Check size={16} /> Trained staff</span>
               <span><Check size={16} /> Professional tools</span>
-              <span><Check size={16} /> ETA 10 minutes</span>
+              <span><Check size={16} /> 10-minute target ETA</span>
               <span><Check size={16} /> Service warranty</span>
               <span><Check size={16} /> Available 24/7</span>
             </div>
@@ -101,18 +90,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="offer">
-        <div className="container offer-inner">
-          <div className="offer-icon"><Sparkles size={22} /></div>
-          <div>
-            <span className="eyebrow">A little something extra</span>
-            <h2>Now offering flat <em>5% discount</em> on every new tyre.</h2>
+      <section className="home-discount-cta-section" aria-labelledby="home-discount-cta-title">
+        <div className="container">
+          <div className="home-discount-cta">
+            <div className="home-discount-cta-copy">
+              <span className="eyebrow">A little something extra</span>
+              <h2 id="home-discount-cta-title">Get a flat 5% discount on every new tyre.</h2>
+              <p>Choose your tyres and book mobile fitting at your home, office or roadside in Dubai.</p>
+            </div>
+            <div className="home-discount-cta-actions">
+              <a className="button" href={`tel:${phone}`}><Phone size={16} /> {phoneDisplay}</a>
+              <a className="button whatsapp-button" href={whatsapp} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} /> Claim your discount</a>
+            </div>
           </div>
-          <a className="button button-dark" href={whatsapp} target="_blank" rel="noreferrer">Claim your discount <ArrowRight size={17} /></a>
         </div>
       </section>
 
       <HowItWorks />
+      <ServiceAreas />
 
       <BrandCarousel />
       <Testimonials />

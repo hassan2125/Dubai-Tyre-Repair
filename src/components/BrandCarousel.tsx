@@ -1,3 +1,5 @@
+import { ArrowRight } from 'lucide-react';
+import { navigate } from '@/lib/navigate';
 import { brandLogos } from '@/data/site';
 
 export default function BrandCarousel() {
@@ -11,12 +13,15 @@ export default function BrandCarousel() {
           <div className="brand-track">
             {doubled.map((brand, index) => (
               <span className="brand-chip" key={`${brand.name}-${index}`}>
-                <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" />
+                <img className={brand.lightLogo ? 'brand-logo-light' : ''} src={brand.logo} alt={`${brand.name} logo`} loading="lazy" />
                 <span className="brand-name">{brand.name}</span>
               </span>
             ))}
           </div>
         </div>
+        <button className="brand-view-all" onClick={() => navigate('/brands')}>
+          Explore all supported brands <ArrowRight size={15} />
+        </button>
       </div>
     </section>
   );
