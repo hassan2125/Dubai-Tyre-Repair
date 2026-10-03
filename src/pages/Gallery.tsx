@@ -12,6 +12,30 @@ import ServiceAreas from '@/components/ServiceAreas';
 
 const categories = ['All', ...services.map(s => s.title)];
 
+interface GalleryImageSources {
+  src: string;
+  desktopSrcSet?: string;
+  mobileSrcSet?: string;
+}
+
+function createGalleryImageSrcSet(image: string, widths: number[]): string {
+  return widths.map((width) => {
+    const url = new URL(image);
+    url.searchParams.set('w', String(width));
+    return `${url.toString()} ${width}w`;
+  }).join(', ');
+}
+
+function getGalleryImageSources(image: string): GalleryImageSources {
+  if (!image.startsWith('https://images.pexels.com/')) return { src: image };
+
+  return {
+    src: image,
+    desktopSrcSet: createGalleryImageSrcSet(image, [640, 900]),
+    mobileSrcSet: createGalleryImageSrcSet(image, [360, 480, 640]),
+  };
+}
+
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [lightbox, setLightbox] = useState<number | null>(null);
@@ -50,18 +74,39 @@ export default function Gallery() {
 
           <div className="gallery-masonry">
             {items.map((item, index) => (
-              <button
-                className={item.span ? 'gallery-tile gallery-tile-tall' : 'gallery-tile'}
-                key={`${item.title}-${index}`}
-                onClick={() => setLightbox(index)}
-              >
-                <img src={item.image} alt={item.title} loading="lazy" />
-                <div className="gallery-tile-overlay">
-                  <span className="gallery-tile-cat">{item.category}</span>
-                  <h3>{item.title}</h3>
-                  <span className="gallery-tile-arrow"><ArrowUpRight size={20} /></span>
-                </div>
-              </button>
+              (() => {
+                const imageSources = getGalleryImageSources(item.image);
+                return (
+                  <button
+                    className={item.span ? 'gallery-tile gallery-tile-tall' : 'gallery-tile'}
+                    key={`${item.title}-${index}`}
+                    onClick={() => setLightbox(index)}
+                  >
+                    <picture>
+                      {imageSources.mobileSrcSet && (
+                        <source
+                          media="(max-width: 640px)"
+                          srcSet={imageSources.mobileSrcSet}
+                          sizes="calc(100vw - 32px)"
+                        />
+                      )}
+                      <img
+                        src={imageSources.src}
+                        srcSet={imageSources.desktopSrcSet}
+                        sizes="(max-width: 900px) 40vw, 380px"
+                        alt={item.title}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
+                      />
+                    </picture>
+                    <div className="gallery-tile-overlay">
+                      <span className="gallery-tile-cat">{item.category}</span>
+                      <h3>{item.title}</h3>
+                      <span className="gallery-tile-arrow"><ArrowUpRight size={20} /></span>
+                    </div>
+                  </button>
+                );
+              })()
             ))}
           </div>
 
