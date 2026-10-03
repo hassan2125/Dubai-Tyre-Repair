@@ -1,10 +1,42 @@
-import type { FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { services } from '@/data/site';
+import { services, whatsapp } from '@/data/site';
+
+type SubmissionStatus = 'idle' | 'sending' | 'success' | 'error';
+
+interface Web3FormsResponse {
+  success?: boolean;
+  message?: string;
+}
 
 export default function BookingForm({ compact = false }: { compact?: boolean }) {
-  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+  const [status, setStatus] = useState<SubmissionStatus>('idle');
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.append('access_key', '440f3287-47ea-42f4-b3a3-cbb71bbc0922');
+    formData.append('subject', 'New booking request - Car Tyre Repair Dubai');
+    setStatus('sending');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+      const result = await response.json() as Web3FormsResponse;
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'The request could not be submitted.');
+      }
+
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
   }
 
   return (
@@ -36,12 +68,18 @@ export default function BookingForm({ compact = false }: { compact?: boolean }) 
       </div>
 
       <label className="form-label-full">Message / additional details
-        <textarea name="details" placeholder="Describe your issue, preferred time, or any other details..." rows={4} />
+        <textarea name="message" placeholder="Describe your issue, preferred time, or any other details..." rows={4} />
       </label>
 
-      <button className="button button-full" type="submit">
-        Send Request <ArrowRight size={17} />
+      <button className="button button-full" type="submit" disabled={status === 'sending'}>
+        {status === 'sending' ? 'Sending...' : 'Send Request'} <ArrowRight size={17} />
       </button>
+      {status === 'success' && <p className="booking-form-status" role="status">Request sent successfully. Our team will contact you shortly.</p>}
+      {status === 'error' && (
+        <p className="booking-form-status booking-form-status-error" role="alert">
+          We couldn't send your request. Please try again or <a href={whatsapp} target="_blank" rel="noreferrer">contact us on WhatsApp</a>.
+        </p>
+      )}
     </form>
   );
 }

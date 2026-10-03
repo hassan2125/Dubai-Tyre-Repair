@@ -354,6 +354,10 @@ h1 em, h2 em { color: var(--amber); font-style: normal; }
 .booking-form input, .booking-form select { height: 44px; }
 .booking-form textarea { padding: 12px; resize: vertical; min-height: 80px; font-family: inherit; }
 .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus { border-color: var(--amber); }
+.booking-form button:disabled { cursor: wait; opacity: .68; }
+.booking-form-status { margin-top: 14px; color: #86efac; font-size: 12px; line-height: 1.5; }
+.booking-form-status-error { color: #fca5a5; }
+.booking-form-status-error a { color: var(--amber); text-decoration: underline; text-underline-offset: 2px; }
 .booking-form > small { display: block; margin-top: 13px; color: #a1a1aa; font-size: 10px; text-align: center; }
 .form-success { padding: 42px 36px; background: var(--paper); border-radius: 14px; border: 1px solid var(--line); text-align: center; }
 .form-success-icon { display: inline-grid; place-items: center; width: 52px; height: 52px; color: #22c55e; background: #dcfce7; border-radius: 50%; margin-bottom: 4px; }
